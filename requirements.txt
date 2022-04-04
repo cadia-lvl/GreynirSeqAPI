@@ -1,0 +1,4 @@
+greynirseq
+fastapi
+uvicorn
+tokenizer
