@@ -3,7 +3,7 @@ import requests
 import json
 
 LOC="/translate/isen"
-LOC="/process/service"
+#LOC="/process/service"
 
 inp =  "Þetta er setning. Og önnur!"
 print("INP:",inp)
@@ -20,6 +20,16 @@ inp = """
 Þetta sýnir listi yfir alla hluthafa Íslandsbanka miðvikudaginn 30. mars síðastliðinn, sem Innherji hefur séð, tveimur dögum eftir að uppgjör viðskipta vegna sölu ríkissjóðs á 22,5 prósenta hlut í bankanum fyrir tæplega 53 milljarða króna hafði farið fram.
 """
 
+print("INP:",inp)
+r = requests.post("http://localhost:8080"+LOC, json={"type":"text","content":inp})
+print("OUT:",r.content.decode("utf-8"))
+json.loads(r.content.decode("utf-8"))
+print()
+
+print("#### ERROR ####")
+
+
+inp =  "a"*256
 print("INP:",inp)
 r = requests.post("http://localhost:8080"+LOC, json={"type":"text","content":inp})
 print("OUT:",r.content.decode("utf-8"))

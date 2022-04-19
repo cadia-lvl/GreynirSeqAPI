@@ -1,6 +1,5 @@
 import torch
 
-
 # Initialize the tagger
 device = torch.device("cpu")  # CPU
 
